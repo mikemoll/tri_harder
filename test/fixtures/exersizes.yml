@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  exercise_performed: MyString
+  load_perscribed: 1
+  reps_perscribed: 1
+  sets_perscribed: 1
+  actual_weight_lifted_1: 1
+  actual_weight_lifted_2: 1
+  actual_weight_lifted_3: 1
+  workout_id: 
+  user_id: 
+
+two:
+  exercise_performed: MyString
+  load_perscribed: 1
+  reps_perscribed: 1
+  sets_perscribed: 1
+  actual_weight_lifted_1: 1
+  actual_weight_lifted_2: 1
+  actual_weight_lifted_3: 1
+  workout_id: 
+  user_id: 
