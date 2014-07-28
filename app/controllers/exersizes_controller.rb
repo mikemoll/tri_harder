@@ -29,6 +29,7 @@ class ExersizesController < ApplicationController
   # POST /exersizes.json
   def create
     @exersize = Exersize.new(exersize_params)
+    @exersize.user = current_user
 
     respond_to do |format|
       if @exersize.save
