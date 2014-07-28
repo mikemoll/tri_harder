@@ -1,24 +1,26 @@
-<h1>Listing exersizes</h1>
-
-<table>
+<%- model_class = Exersize -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Exersize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Exercise performed</th>
-      <th>Load perscribed</th>
-      <th>Reps perscribed</th>
-      <th>Sets perscribed</th>
-      <th>Actual weight lifted 1</th>
-      <th>Actual weight lifted 2</th>
-      <th>Actual weight lifted 3</th>
-      <th>Workout</th>
-      <th>User</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:exercise_performed) %></th>
+      <th><%= model_class.human_attribute_name(:load_perscribed) %></th>
+      <th><%= model_class.human_attribute_name(:reps_perscribed) %></th>
+      <th><%= model_class.human_attribute_name(:sets_perscribed) %></th>
+      <th><%= model_class.human_attribute_name(:actual_weight_lifted_1) %></th>
+      <th><%= model_class.human_attribute_name(:actual_weight_lifted_2) %></th>
+      <th><%= model_class.human_attribute_name(:actual_weight_lifted_3) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @exersizes.each do |exersize| %>
       <tr>
+        <td><%= exersize.id %></td>
         <td><%= exersize.exercise_performed %></td>
         <td><%= exersize.load_perscribed %></td>
         <td><%= exersize.reps_perscribed %></td>
@@ -26,16 +28,21 @@
         <td><%= exersize.actual_weight_lifted_1 %></td>
         <td><%= exersize.actual_weight_lifted_2 %></td>
         <td><%= exersize.actual_weight_lifted_3 %></td>
-        <td><%= exersize.workout %></td>
-        <td><%= exersize.user %></td>
-        <td><%= link_to 'Show', exersize %></td>
-        <td><%= link_to 'Edit', edit_exersize_path(exersize) %></td>
-        <td><%= link_to 'Destroy', exersize, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l exersize.created_at, format: :long %></td>
+        <td>
+          <%= link_to exersize_path(exersize), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to exersize_path(exersize), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Exersize', new_exersize_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_exersize_path,
+            :class => 'btn btn-primary' %>

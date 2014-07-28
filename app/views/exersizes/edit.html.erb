@@ -1,6 +1,5 @@
-<h1>Editing exersize</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @exersize %> |
-<%= link_to 'Back', exersizes_path %>
+<%- model_class = Exersize -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Exersize %></h1>
+</div>
+<%= render :partial => 'form' %>
