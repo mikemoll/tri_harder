@@ -1,4 +1,5 @@
 ActiveAdmin.register Exersize do
+  permit_params :exercise_performed, :load_perscribed, :reps_perscribed, :sets_perscribed, :actual_weight_lifted_1, :actual_weight_lifted_2, :actual_weight_lifted_3
 
   
   # See permitted parameters documentation:
