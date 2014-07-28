@@ -1,4 +1,5 @@
 ActiveAdmin.register Workout do
+  permit_params 
 
   
   # See permitted parameters documentation:
