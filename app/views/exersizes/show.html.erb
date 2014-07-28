@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Exercise performed:</strong>
+  <%= @exersize.exercise_performed %>
+</p>
+
+<p>
+  <strong>Load perscribed:</strong>
+  <%= @exersize.load_perscribed %>
+</p>
+
+<p>
+  <strong>Reps perscribed:</strong>
+  <%= @exersize.reps_perscribed %>
+</p>
+
+<p>
+  <strong>Sets perscribed:</strong>
+  <%= @exersize.sets_perscribed %>
+</p>
+
+<p>
+  <strong>Actual weight lifted 1:</strong>
+  <%= @exersize.actual_weight_lifted_1 %>
+</p>
+
+<p>
+  <strong>Actual weight lifted 2:</strong>
+  <%= @exersize.actual_weight_lifted_2 %>
+</p>
+
+<p>
+  <strong>Actual weight lifted 3:</strong>
+  <%= @exersize.actual_weight_lifted_3 %>
+</p>
+
+<p>
+  <strong>Workout:</strong>
+  <%= @exersize.workout %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @exersize.user %>
+</p>
+
+<%= link_to 'Edit', edit_exersize_path(@exersize) %> |
+<%= link_to 'Back', exersizes_path %>

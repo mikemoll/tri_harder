@@ -1,0 +1,41 @@
+<h1>Listing exersizes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Exercise performed</th>
+      <th>Load perscribed</th>
+      <th>Reps perscribed</th>
+      <th>Sets perscribed</th>
+      <th>Actual weight lifted 1</th>
+      <th>Actual weight lifted 2</th>
+      <th>Actual weight lifted 3</th>
+      <th>Workout</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @exersizes.each do |exersize| %>
+      <tr>
+        <td><%= exersize.exercise_performed %></td>
+        <td><%= exersize.load_perscribed %></td>
+        <td><%= exersize.reps_perscribed %></td>
+        <td><%= exersize.sets_perscribed %></td>
+        <td><%= exersize.actual_weight_lifted_1 %></td>
+        <td><%= exersize.actual_weight_lifted_2 %></td>
+        <td><%= exersize.actual_weight_lifted_3 %></td>
+        <td><%= exersize.workout %></td>
+        <td><%= exersize.user %></td>
+        <td><%= link_to 'Show', exersize %></td>
+        <td><%= link_to 'Edit', edit_exersize_path(exersize) %></td>
+        <td><%= link_to 'Destroy', exersize, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Exersize', new_exersize_path %>
